@@ -178,3 +178,11 @@ footer .inner{
 html, body { height:100%; display:flex; flex-direction:column; }
 .container, .about-container, section { flex:1; }
 footer { margin-top:auto; }
+
+.price {
+  color: red;       /* Price ka color red */
+  font-weight: bold; /* Bold karega */
+  font-size: 16px;   /* Optional: thoda readable size */
+  margin-top: 5px;
+}
+
