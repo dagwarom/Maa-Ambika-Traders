@@ -88,14 +88,21 @@
 
   <!-- Dynamic Pricing Script -->
 <script>
-  fetch('prices.json')
+  const sheetURL = "https://opensheet.elk.sh/1i-jp2-d2662iWm5l_IJp8UFHHH1z9dqjmWJp1laUFkc/Sheet1";
+  fetch(sheetURL)
     .then(res => res.json())
     .then(data => {
-      document.getElementById('ultratech2-price').textContent = data.ultratech2;
-      document.getElementById('dalmia-price').textContent = data.dalmia;
-      document.getElementById('steel-price').textContent = data.steel;
+      // Find items
+      let ultratech = data.find(row => row.Item.toLowerCase() === "ultratech");
+      let dalmia = data.find(row => row.Item.toLowerCase() === "dalmia");
+      let steel = data.find(row => row.Item.toLowerCase() === "steel");
+
+      if (ultratech) document.getElementById('ultratech2-price').textContent = "₹" + ultratech.Price;
+      if (dalmia) document.getElementById('dalmia-price').textContent = "₹" + dalmia.Price;
+      if (steel) document.getElementById('steel-price').textContent = "₹" + steel.Price;
     })
     .catch(err => console.error("Error loading prices:", err));
 </script>
+
 </body>
 </html>
