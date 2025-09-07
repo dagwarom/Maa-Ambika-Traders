@@ -1,0 +1,126 @@
+/* Reset + base */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: system-ui, Arial, sans-serif;
+  background: #f9f9f9;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* Navbar */
+header {
+  background: #0e7a6d;   /* main brand color */
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 20px;
+}
+.nav img {
+  height: 52px;
+  width: auto;
+  border-radius: 8px;
+  /* remove background to let PNG show naturally */
+  background: transparent;
+  padding: 0;
+}
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+.brand h1 { font-size: 20px; font-weight: 700; margin: 0; }
+.brand small { font-size: 13px; opacity: .9; }
+.spacer { flex:1; }
+nav.links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 600;
+  opacity: .95;
+}
+nav.links a:hover { opacity:1; text-decoration: underline; }
+
+/* Sections */
+section, .container, .about-container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+}
+h2 {
+  font-size: 26px;
+  color: #075a50;
+  margin-bottom: 16px;
+}
+p, li { font-size: 16px; margin-bottom: 14px; }
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Products grid */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+}
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.product-card h3 { margin: 12px 0 6px; }
+.price { color: green; font-weight: bold; }
+
+/* Contact Page */
+.contact-box { display:flex; flex-wrap:wrap; gap:20px; }
+.info, .form {
+  flex:1; min-width:300px; background:#fff; padding:20px;
+  border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+.form input, .form textarea {
+  width:100%; padding:10px; margin:8px 0;
+  border:1px solid #ddd; border-radius:6px;
+}
+.form button {
+  background:#28a745; color:#fff; border:none;
+  padding:10px 20px; border-radius:6px; cursor:pointer;
+}
+.form button:hover { background:#218838; }
+
+/* WhatsApp btn */
+.whatsapp {
+  display:inline-block; margin-top:15px; background:#25D366;
+  color:#fff; padding:10px 15px; border-radius:6px; text-decoration:none;
+}
+
+/* Footer */
+footer {
+  background:#0b3530; color:#d1fae5; text-align:center;
+}
+footer .inner {
+  max-width:1100px; margin:auto; padding:20px;
+  font-size:14px;
+}
