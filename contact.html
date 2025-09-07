@@ -35,12 +35,14 @@
         <a class="whatsapp" href="https://wa.me/918806026628" target="_blank">💬 Chat on WhatsApp</a>
         <iframe src="https://maps.google.com/maps?q=Maa%20Ambika%20Traders%20Samudrapur&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
       </div>
+
+      <!-- Contact Form -->
       <div class="form">
         <h2>Send Us a Message</h2>
-        <form>
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <textarea rows="5" placeholder="Your Message" required></textarea>
+        <form action="https://formspree.io/f/meolvlqr" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="_replyto" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
           <button type="submit">Send Message</button>
         </form>
       </div>
@@ -54,3 +56,4 @@
   </footer>
 </body>
 </html>
+
