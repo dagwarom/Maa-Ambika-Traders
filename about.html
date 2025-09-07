@@ -30,18 +30,61 @@
     <h2>About Maa Ambika Traders</h2>
     <p>At Maa Ambika Traders, we provide high-quality building materials like cement, steel, sand, and pipes. We are committed to delivering products that meet your construction needs with competitive pricing and excellent customer service.</p>
 
-    <!-- Video Section -->
-    <div class="animation-box">
-      <video autoplay muted loop playsinline>
-        <source src="img/Dalmai.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop playsinline>
-        <source src="img/Making of building.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop playsinline>
-        <source src="img/Bridge Construction.mp4" type="video/mp4">
-      </video>
-    </div>
+  <!-- Video Section -->
+<h2>Our Work (Videos)</h2>
+<div class="video-stack">
+  <video class="watch" controls playsinline preload="none" poster="img/Photo 1.png">
+    <source data-src="img/Dalmai.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <video class="watch" controls playsinline preload="none" poster="img/Photo 2.png">
+    <source data-src="img/Making of building.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <video class="watch" controls playsinline preload="none" poster="img/Photo 3.png">
+    <source data-src="img/Bridge Construction.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<script>
+  // Lazy-load video sources + play only when visible
+  const vids = document.querySelectorAll('.watch');
+  const m = window.matchMedia('(max-width: 768px)').matches;
+
+  // load src only when play is requested or video is intersecting
+  function loadSrc(v){
+    const src = v.querySelector('source');
+    if(src && src.dataset.src && !src.src){
+      src.src = src.dataset.src;
+      v.load();
+    }
+  }
+
+  if (!m) {
+    // Desktop: auto play/pause when in view to save CPU
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        const v = e.target;
+        if (e.isIntersecting){
+          loadSrc(v);
+          v.muted = true;
+          v.play().catch(()=>{});
+        } else {
+          v.pause();
+        }
+      });
+    }, {threshold: .4});
+    vids.forEach(v => io.observe(v));
+  } else {
+    // Mobile: only load when user taps play
+    vids.forEach(v => {
+      v.addEventListener('play', () => loadSrc(v), { once:true });
+    });
+  }
+</script>
 
     <h2>Why Choose Us?</h2>
     <p>
