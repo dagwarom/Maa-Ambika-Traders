@@ -70,14 +70,18 @@ p, li { font-size: 16px; margin-bottom: 14px; }
 }
 
 /* Products grid -> row/columns */
+/* Products grid -> row/columns */
 .products {
-  display: flex;          /* grid ऐवजी flex वापरा */
-  flex-wrap: wrap;        /* मोबाइलवर wrap होण्यासाठी */
+  display: flex;          
+  flex-wrap: wrap;        /* Mobile pe wrap ho */
   gap: 20px;
 }
+
+/* Product card base design */
 .product-card {
-  flex: 1;                /* सर्व cards समान जागा घेतील */
-  min-width: 220px;       /* मोबाइलसाठी किमान रुंदी */
+  flex: 1;                
+  min-width: 220px;       /* Mobile ke liye min width */
+  max-width: 250px;       /* Laptop pe card jyada bada na ho */
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -85,12 +89,36 @@ p, li { font-size: 16px; margin-bottom: 14px; }
   text-align: center;
   transition: all 0.3s;
 }
+
 .product-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
 
+/* Laptop/Desktop: cards ek row me neatly fit ho */
+@media (min-width: 992px) {
+  .products {
+    justify-content: flex-start;
+  }
+  .product-card {
+    flex: 0 1 calc(25% - 20px); /* 4 items per row */
+  }
+}
+
+/* Tablet: 2 items per row */
+@media (max-width: 991px) and (min-width: 601px) {
+  .product-card {
+    flex: 0 1 calc(50% - 20px);
+  }
+}
+
+/* Mobile: 1 item per row */
+@media (max-width: 600px) {
+  .product-card {
+    flex: 0 1 100%;
+  }
+}
 /* Contact Page */
 .contact-box { display:flex; flex-wrap:wrap; gap:20px; }
 .info, .form {
