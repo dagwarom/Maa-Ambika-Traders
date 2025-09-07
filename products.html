@@ -27,27 +27,27 @@
 
   <div class="container">
     <!-- Cement Section -->
-    <h2>Cement</h2>
-    <div class="products">
-      <div class="product-card">
-        <img src="img/UltraTech-Cement1.jpg" alt="UltraTech Cement">
-      </div>
-      <div class="product-card">
-        <img src="img/UltraTech-Cement2.jpg" alt="UltraTech Cement">
-        <h3>UltraTech Cement</h3>
-        <p id="ultratech2-price" class="price">Loading...</p>
-      </div>
-      <div class="product-card">
-        <img src="img/dalmia-cement1.jpg" alt="Dalmia Cement">
-        <h3>Dalmia Cement</h3>
-        <p id="dalmia-price" class="price">Loading...</p>
-      </div>
-      <div class="product-card">
-        <img src="img/dalmia-cement2.jpg" alt="Dalmia Cement">
-        <h3>Dalmia Cement</h3>
-      </div>
-    </div>
-
+  <!-- Cement Section -->
+<h2>Cement</h2>
+<div class="products">
+  <div class="product-card">
+    <img src="img/UltraTech-Cement1.jpg" alt="UltraTech Cement">
+  </div>
+  <div class="product-card">
+    <img src="img/UltraTech-Cement2.jpg" alt="UltraTech Cement">
+    <h3>UltraTech Cement</h3>
+    <p id="ultratech2-price" class="price">Loading...</p>
+  </div>
+  <div class="product-card">
+    <img src="img/dalmia-cement1.jpg" alt="Dalmia Cement">
+    <h3>Dalmia Cement</h3>
+    <p id="dalmia-price" class="price">Loading...</p>
+  </div>
+  <div class="product-card">
+    <img src="img/dalmia-cement2.jpg" alt="Dalmia Cement">
+    <h3>Dalmia Cement</h3>
+  </div>
+</div>
     <!-- Steel Section -->
     <h2>Steel</h2>
     <div class="products">
@@ -87,22 +87,15 @@
   </footer>
 
   <!-- Dynamic Pricing Script -->
-  <script>
-    fetch('prices.json')
-      .then(res => res.json())
-      .then(data => {
-        // Cement Prices
-        document.getElementById('ultratech-price').textContent = "₹" + data.ultratech;
-        document.getElementById('ultratech2-price').textContent = "₹" + data.ultratech;
-        document.getElementById('dalmia-price').textContent = "₹" + data.dalmia;
-        document.getElementById('dalmia2-price').textContent = "₹" + data.dalmia;
-
-        // Steel Price
-        document.getElementById('steel-price').textContent = "₹" + data.steel;
-      })
-      .catch(err => {
-        console.error("Error loading prices:", err);
-      });
-  </script>
+<script>
+  fetch('prices.json')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('ultratech2-price').textContent = data.ultratech2;
+      document.getElementById('dalmia-price').textContent = data.dalmia;
+      document.getElementById('steel-price').textContent = data.steel;
+    })
+    .catch(err => console.error("Error loading prices:", err));
+</script>
 </body>
 </html>
