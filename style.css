@@ -228,7 +228,7 @@ footer { margin-top:auto; }
 
 .rent-strip p {
   display: inline-block;
-  padding-left: 100%;
+  padding-left: 100%;          /* shuru mein screen ke bahar */
   animation: scrollText 15s linear infinite;
 }
 
@@ -236,20 +236,7 @@ footer { margin-top:auto; }
   0%   { transform: translateX(0%); }
   100% { transform: translateX(-100%); }
 }
-.rent-strip {
-  background: red;
-  padding: 16px 0;
-  text-align: center;
-}
 
-.rent-strip marquee {
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  letter-spacing: 1px;
-  line-height: 24px;   /* text ko vertically center karega */
-  vertical-align: middle;
-}
 
 
 
