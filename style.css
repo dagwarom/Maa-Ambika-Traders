@@ -220,26 +220,27 @@ footer { margin-top:auto; }
   color: white;
   font-weight: bold;
   font-size: 18px;
-  height: 40px;                /* fixed height strip */
-  display: flex;               /* vertical align ke liye */
-  align-items: center;         /* text ko center karega */
+  height: 40px;                /* fixed strip height */
+  display: flex;
+  align-items: center;         /* vertical center */
+  justify-content: center;     /* horizontal center (optional) */
   overflow: hidden;
   white-space: nowrap;
-  position: relative;
 }
 
 .rent-strip p {
   display: inline-block;
   padding-left: 100%;
   animation: scrollText 15s linear infinite;
-  margin: 0;                  /* extra space remove */
-  line-height: 1;             /* safe line-height */
+  margin: 0;                  
+  line-height: 40px;           /* strip height ke barabar */
 }
 
 @keyframes scrollText {
-  0%   { transform: translateX(0%); }
+  0%   { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
+
 
 
 
