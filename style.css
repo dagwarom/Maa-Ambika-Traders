@@ -214,3 +214,27 @@ footer { margin-top:auto; }
   margin-top: 5px;
 }
 
+/* Rent Strip Animation */
+.rent-strip {
+  background: red;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.rent-strip p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+
