@@ -239,13 +239,16 @@ footer { margin-top:auto; }
 .rent-strip {
   background: red;
   padding: 6px 0;
+  text-align: center;
 }
 
 .rent-strip marquee {
-  color: white;        /* text white hoga */
-  font-weight: bold;   /* mota text hoga */
-  font-size: 16px;     /* thoda bada font */
-  letter-spacing: 1px; /* spacing thoda gap ke sath */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 24px;   /* text ko vertically center karega */
+  vertical-align: middle;
 }
 
 
